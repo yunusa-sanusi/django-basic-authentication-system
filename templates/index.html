@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+{% include './includes/navbar.html' %}
+<div class="container mt-5 w-50">
+  <div class="card text-center">
+    <div class="card-header">
+      Welcome to
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Django Authentication App</h5>
+      <p class="card-text">A basic implementation of authentication with django</p>
+      <a href="{% url 'accounts:signin' %}" class="btn btn-primary mr-3">Signin</a>
+      <a href="{% url 'accounts:signup' %}" class="btn btn-secondary">Signup</a>
+      <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+    </div>
+  </div>
+</div>
+{% endblock content %}

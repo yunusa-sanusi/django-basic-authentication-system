@@ -1,0 +1,30 @@
+<!-- Navbar-->
+<header class="header">
+  <nav class="navbar navbar-expand-lg navbar-light py-3">
+    <div class="container">
+      <!-- Navbar Brand -->
+      <a href="#" class="navbar-brand">
+        <img src="https://bootstrapious.com/i/snippets/sn-registeration/logo.svg" alt="logo" width="150">
+      </a>
+      <ul class="nav justify-content-end">
+        {% if request.user.is_authenticated %}
+        <li class="nav-item">
+          <span class="nav-link active">
+            Signed in as: {{ request.user.username }}
+          </span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'accounts:signout' %}">Logout</a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'accounts:signin' %}">Signup</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'accounts:signin' %}">Login</a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </nav>
+</header>
