@@ -8,4 +8,5 @@
   <li>Multiple Users System</l1>
   <li>Users can create account</l1>
   <li>Users can login</l1>
+  <li>Password reset</l1>
 </ul>
