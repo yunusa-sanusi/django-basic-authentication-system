@@ -9,7 +9,7 @@ User = get_user_model()
 
 def index(request):
     if request.user.is_authenticated:
-        return redirect('accounts:dashboard', pk=request.user.pk)
+        return redirect('dashboard', pk=request.user.pk)
 
     else:
         return render(request, 'index.html')
@@ -33,7 +33,7 @@ def get_template(request):
         return 'account/teacher-dashboard.html'
 
 
-@login_required(login_url='accounts:signin')
+@login_required(login_url='signin')
 def user_dashboard(request, pk):
     # populating our dashboard form based on logged in usertype
     if request.user.is_student:
@@ -51,7 +51,7 @@ def user_dashboard(request, pk):
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
-            return redirect('accounts:dashboard', pk=request.user.pk)
+            return redirect('dashboard', pk=request.user.pk)
 
     context = {
         'u_form': user_form,
@@ -63,7 +63,7 @@ def user_dashboard(request, pk):
 
 def create_student(request):
     if request.user.is_authenticated:
-        return redirect('accounts:dashboard', pk=request.user.pk)
+        return redirect('dashboard', pk=request.user.pk)
     else:
         form = StudentCreationForm
 
@@ -72,14 +72,14 @@ def create_student(request):
 
             if form.is_valid():
                 form.save()
-                return redirect('accounts:signin')
+                return redirect('signin')
 
         return render(request, 'account/create-student.html', {'form': form})
 
 
 def create_teacher(request):
     if request.user.is_authenticated:
-        return redirect('accounts:dashboard', pk=request.user.pk)
+        return redirect('dashboard', pk=request.user.pk)
     else:
         form = TeacherCreationForm
 
@@ -88,14 +88,14 @@ def create_teacher(request):
 
             if form.is_valid():
                 form.save()
-                return redirect('accounts:signin')
+                return redirect('signin')
 
         return render(request, 'account/create-teacher.html', {'form': form})
 
 
 def user_login(request):
     if request.user.is_authenticated:
-        return redirect('accounts:dashboard', pk=request.user.pk)
+        return redirect('dashboard', pk=request.user.pk)
     else:
         if request.method == 'POST':
             email = request.POST.get('email')
@@ -106,12 +106,12 @@ def user_login(request):
 
             if user is not None:
                 login(request, user)
-                return redirect('accounts:dashboard', pk=request.user.pk)
+                return redirect('dashboard', pk=request.user.pk)
 
         return render(request, 'account/login.html')
 
 
-@login_required(login_url='accounts:signin')
+@login_required(login_url='signin')
 def user_logout(request):
     logout(request)
     return redirect('home')

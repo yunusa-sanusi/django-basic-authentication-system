@@ -18,14 +18,14 @@
           </span>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'accounts:signout' %}">Logout</a>
+          <a class="nav-link active" href="{% url 'signout' %}">Logout</a>
         </li>
         {% else %}
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'accounts:signin' %}">Signup</a>
+          <a class="nav-link active" href="{% url 'signin' %}">Signup</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'accounts:signin' %}">Login</a>
+          <a class="nav-link active" href="{% url 'signin' %}">Login</a>
         </li>
         {% endif %}
       </ul>

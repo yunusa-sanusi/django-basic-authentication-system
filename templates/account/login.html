@@ -41,14 +41,14 @@
               <input type="password" name="password" placeholder="Enter password">
             </div>
             <div class="row px-3 mb-4">
-              <a href="#" class="mb-0 text-sm">Forgot Password?</a>
+              <a href="{% url 'password_reset' %}" class="mb-0 text-sm">Forgot Password?</a>
             </div>
             <div class="row mb-3 px-3">
               <button type="submit" class="btn btn-blue text-center">Login</button>
             </div>
             <div class="row mb-4 px-3">
               <small class="font-weight-bold">Don't have an account?
-                <a href="{% url 'accounts:signup' %}" class="text-danger">Sign Up</a>
+                <a href="{% url 'signup' %}" class="text-danger">Sign Up</a>
               </small>
             </div>
           </form>
