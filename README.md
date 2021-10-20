@@ -10,3 +10,15 @@
   <li>Users can login</l1>
   <li>Password reset</l1>
 </ul>
+
+<hr>
+<h6>Templates by:</h6>
+<ul>
+  <a href="https://jsfiddle.net/bootstrapious/3j4a0Lps">Ondrej</a>
+  <a href="https://bbbootstrap.com/users/edgar-burongoh-33849">Edgar Burongoh</a>
+  <a href="https://bbbootstrap.com/users/omkar-bailkeri83131">Omkar Bailkeri</a>
+</ul>
+
+<h3>
+  <a href="https://dj-authentication-app.herokuapp.com">Live Demo</a>
+</h3>
