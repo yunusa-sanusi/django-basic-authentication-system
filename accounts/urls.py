@@ -6,7 +6,7 @@ urlpatterns = [
     path('signup/', create_student, name='signup'),
     path('add-teacher/', create_teacher, name='add-teacher'),
     path('dashboard/<int:pk>', user_dashboard, name='dashboard'),
-    path('signin/', user_login, name='signin'),
+    path('login/', user_login, name='signin'),
     path('signout/', user_logout, name='signout'),
 
     path('password-reset/', auth_views.PasswordResetView.as_view(template_name='password/password_reset_form.html'),
